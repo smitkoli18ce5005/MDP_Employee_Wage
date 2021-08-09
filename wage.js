@@ -4,6 +4,7 @@ const wage_per_hr = 20
 const days_in_month = 20
 
 let wage_array = [];
+let full_time_days = [];
 
 //uc1
 console.log("----------uc1---------");
@@ -252,6 +253,16 @@ class Employee{
             }
         });
     }
+
+    //Find the first occurrence when Full Time Wage was earned using find function
+    displayFirstFullTimePay(){
+        wage_array.find((element,index) => {
+            if(element == 160){
+                    full_time_days.push(index+1);
+            }
+        });
+        console.log("The first occurance when Full Time Wage was earned is = " +full_time_days[0]);
+    }
 }
 
 var emp = new Employee();
@@ -278,3 +289,7 @@ emp.displayDailyWage();
 //Show Days when Full time wage of 160 were earned using filter function
 console.log("----------------------");
 emp.displayFullTimeWage();
+
+//Find the first occurrence when Full Time Wage was earned using find function
+console.log("----------------------");
+emp.displayFirstFullTimePay();

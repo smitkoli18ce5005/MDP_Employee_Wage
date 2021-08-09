@@ -1,3 +1,7 @@
+const full_time_wage = 8
+const part_time_wage = 4
+const wage_per_hr = 20
+
 //uc1
 console.log("----------uc1---------");
 console.log("Welcome to employee wage computation");
@@ -18,3 +22,7 @@ let key = Math.floor(Math.random()*10%3);
                 console.log("In default case");
                 break;
         }
+
+//uc1
+console.log("----------uc2---------");
+console.log("Full time wage for employee is : " +full_time_wage*wage_per_hr);

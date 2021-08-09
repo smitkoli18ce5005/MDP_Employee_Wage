@@ -2,7 +2,7 @@ uc1     -   Print welcome message
             Check employee attendance
 uc2     -   Calculate full time wage
 uc3     -   Calculate part time wage
-uc4     -   
+uc4     -   Calculating employee wage using switch
 uc5     -   
 uc6     -   
 uc7     -   

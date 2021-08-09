@@ -60,7 +60,7 @@ console.log("----------uc5---------");
     let current_day = 0;
     let employee_wage = 0;
     let total_employee_wage = 0;
-    while(current_day <= days_in_month){
+    while(current_day < days_in_month){
         let key = Math.floor(Math.random()*10%3);
         let isfulltime = false;
         switch(key){
@@ -79,5 +79,49 @@ console.log("----------uc5---------");
         total_employee_wage += employee_wage;
         current_day += 1;
     }
+    console.log("Monthly Employee Wage = " +total_employee_wage);
+}
+
+//uc6
+console.log("----------uc6---------");
+{   
+    let current_day = 0;
+    let employee_wage = 0;
+    let total_employee_wage = 0;
+    let max_working_hours = 160;
+    let current_hours = 0;
+    let total_part_time_days = 0;
+    let total_full_time_days = 0;
+    let total_absent_time_days = 0;
+
+    while(current_hours <= max_working_hours && current_day < days_in_month){
+        let key = Math.floor(Math.random()*10%3);
+        let isfulltime = false;
+        switch(key){
+            case 0:
+                current_hours += part_time_wage;
+                employee_wage += part_time_wage*wage_per_hr;
+                total_part_time_days += 1;
+                break;
+            case 1:
+                current_hours += full_time_wage;
+                employee_wage += full_time_wage*wage_per_hr;
+                total_full_time_days += 1;
+                break;
+            case 2:
+                total_absent_time_days += 1;
+                break;
+            default:
+                console.log("In default case");
+                break;
+        }
+        total_employee_wage += employee_wage;
+        current_day += 1;
+    }
+    console.log("Total Absent Days = " +total_absent_time_days);
+    console.log("Total Part Time Days = " +total_part_time_days);
+    console.log("Total Full Time Days = " +total_full_time_days);
+    console.log("Total Working Hours = " +current_hours);
+    console.log("Total Working Days = " +current_day);
     console.log("Monthly Employee Wage = " +total_employee_wage);
 }

@@ -3,6 +3,8 @@ const part_time_wage = 4
 const wage_per_hr = 20
 const days_in_month = 20
 
+let wage_array = [];
+
 //uc1
 console.log("----------uc1---------");
 console.log("Welcome to employee wage computation");
@@ -212,19 +214,24 @@ class Employee{
 
     //uc8
     totalWageUsingArray(){
-        let wage_array = [];
         for(let i=0;i<days_in_month;i++){
             wage_array.push(this.dailyWage(this.checkAttendance()));
         }
-        return wage_array;
     }
 
     //uc8
-    totalWageCalculater(wage_array){
+    totalWageCalculater(){
         let total_wage = 0;
         for(let i=0;i<wage_array.length;i++){
             total_wage += wage_array[i];
         }
+        return total_wage;
+    }
+
+    //Calculate total Wage using Array forEach
+    totalWageUsingForEach(){
+        let total_wage = 0;
+        wage_array.forEach(element => total_wage += element);
         return total_wage;
     }
 }
@@ -234,6 +241,14 @@ console.log("Monthly wage = " +emp.monthlyWage());
 console.log("-----------------------------------");
 emp.restrictedHours(160);
 
+emp.totalWageUsingArray()
+console.log("----------------------");
+console.log("The wage array is : " +wage_array);
+
 //uc8
 console.log("----------uc8---------");
-console.log("Total wage calculated using array = " +emp.totalWageCalculater(emp.totalWageUsingArray()));
+console.log("Total wage calculated using array = " +emp.totalWageCalculater());
+
+//Calculate total Wage using Array forEach
+console.log("----------------------");
+console.log("Total wage calculated using for each = " +emp.totalWageUsingForEach());

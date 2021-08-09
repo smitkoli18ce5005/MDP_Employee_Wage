@@ -209,9 +209,31 @@ class Employee{
         console.log("Total Working Days = " +current_day);
         console.log("Monthly Employee Wage = " +total_wage);
     }
+
+    //uc8
+    totalWageUsingArray(){
+        let wage_array = [];
+        for(let i=0;i<days_in_month;i++){
+            wage_array.push(this.dailyWage(this.checkAttendance()));
+        }
+        return wage_array;
+    }
+
+    //uc8
+    totalWageCalculater(wage_array){
+        let total_wage = 0;
+        for(let i=0;i<wage_array.length;i++){
+            total_wage += wage_array[i];
+        }
+        return total_wage;
+    }
 }
 
 var emp = new Employee();
 console.log("Monthly wage = " +emp.monthlyWage());
 console.log("-----------------------------------");
 emp.restrictedHours(160);
+
+//uc8
+console.log("----------uc8---------");
+console.log("Total wage calculated using array = " +emp.totalWageCalculater(emp.totalWageUsingArray()));

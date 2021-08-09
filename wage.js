@@ -23,6 +23,6 @@ let key = Math.floor(Math.random()*10%3);
                 break;
         }
 
-//uc1
+//uc2
 console.log("----------uc2---------");
 console.log("Full time wage for employee is : " +full_time_wage*wage_per_hr);

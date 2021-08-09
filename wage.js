@@ -1,6 +1,7 @@
 const full_time_wage = 8
 const part_time_wage = 4
 const wage_per_hr = 20
+const days_in_month = 20
 
 //uc1
 console.log("----------uc1---------");
@@ -51,4 +52,32 @@ console.log("----------uc4---------");
                 console.log("In default case");
                 break;
         }
+}
+
+//uc5
+console.log("----------uc5---------");
+{   
+    let current_day = 0;
+    let employee_wage = 0;
+    let total_employee_wage = 0;
+    while(current_day <= days_in_month){
+        let key = Math.floor(Math.random()*10%3);
+        let isfulltime = false;
+        switch(key){
+            case 0:
+                employee_wage += part_time_wage*wage_per_hr;
+                break;
+            case 1:
+                employee_wage += full_time_wage*wage_per_hr;
+                break;
+            case 2:
+                break;
+            default:
+                console.log("In default case");
+                break;
+        }
+        total_employee_wage += employee_wage;
+        current_day += 1;
+    }
+    console.log("Monthly Employee Wage = " +total_employee_wage);
 }

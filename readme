@@ -11,3 +11,4 @@ task_1  -   Calculate total Wage using Array forEach
 task_2  -   Show the Day along with Daily Wage using Array map helper function
 task_3  -   Show Days when Full time wage of 160 were earned using filter function
 task_4  -   Find the first occurrence when Full Time Wage was earned using find function
+task_5  -   Check if Every Element of Full Time Wage is truly holding Full time wage

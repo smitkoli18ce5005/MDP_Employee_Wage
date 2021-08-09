@@ -263,6 +263,18 @@ class Employee{
         });
         console.log("The first occurance when Full Time Wage was earned is = " +full_time_days[0]);
     }
+
+    //Check if Every Element of Full Time Wage is truly holding Full time wage
+    checkFullTimeWage(){
+        let isValid = true;
+        for(let i=0;i<wage_array.length;i++){
+            if(wage_array[i] != 160){
+                isValid = false;
+                break;
+            }
+        }
+        console.log("Every Element of Full Time Wage is truly holding Full time wage = " +isValid)
+    }
 }
 
 var emp = new Employee();
@@ -293,3 +305,7 @@ emp.displayFullTimeWage();
 //Find the first occurrence when Full Time Wage was earned using find function
 console.log("----------------------");
 emp.displayFirstFullTimePay();
+
+//Check if Every Element of Full Time Wage is truly holding Full time wage
+console.log("----------------------");
+emp.checkFullTimeWage();

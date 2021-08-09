@@ -268,7 +268,7 @@ class Employee{
     checkFullTimeWage(){
         let isValid = true;
         for(let i=0;i<wage_array.length;i++){
-            if(wage_array[i] != 160){
+            if(wage_array[i] != 160 && wage_array[i] != 80 && wage_array[i] != 0){
                 isValid = false;
                 break;
             }

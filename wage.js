@@ -235,10 +235,22 @@ class Employee{
         return total_wage;
     }
 
+    //Show the Day along with Daily Wage using Array map helper function
     displayDailyWage(){
         console.log("Day \t|\t Wage");
         console.log("----------------------");
         wage_array.map((element,index) => console.log(index+1 +" \t|\t " +element));
+    }
+
+    //Show Days when Full time wage of 160 were earned using filter function
+    displayFullTimeWage(){
+        console.log("Day \t|\t Wage");
+        console.log("----------------------");
+        wage_array.filter((element,index) => {
+            if(element == 160){
+                console.log(index+1 +" \t|\t " +element);
+            }
+        });
     }
 }
 
@@ -262,3 +274,7 @@ console.log("Total wage calculated using for each = " +emp.totalWageUsingForEach
 //Show the Day along with Daily Wage using Array map helper function
 console.log("----------------------");
 emp.displayDailyWage();
+
+//Show Days when Full time wage of 160 were earned using filter function
+console.log("----------------------");
+emp.displayFullTimeWage();

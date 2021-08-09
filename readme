@@ -9,3 +9,4 @@ uc7     -   Create employee class
 uc8     -   Calculate total wage using array
 task_1  -   Calculate total Wage using Array forEach
 task_2  -   Show the Day along with Daily Wage using Array map helper function
+task_3  -   Show Days when Full time wage of 160 were earned using filter function

@@ -291,6 +291,21 @@ class Employee{
             console.log("No Part Time Wage");
         }
     }
+
+    //Find the number of days the Employee Worked
+    totalDays(){
+        let days_worked = 0;
+        for(let i=0;i<wage_array.length;i++){
+            if(wage_array[i] == 0){
+                continue;
+            }else if(wage_array[i] == 80){
+                days_worked += 0.5;
+            }else{
+                days_worked += 1;
+            }
+        }
+        console.log("Total number of days worked = " +days_worked);
+    }
 }
 
 var emp = new Employee();
@@ -329,3 +344,7 @@ emp.checkFullTimeWage();
 //Check if there is any Part Time Wage
 console.log("----------------------");
 emp.checkPartTimeWage();
+
+//Find the number of days the Employee Worked
+console.log("----------------------");
+emp.totalDays();

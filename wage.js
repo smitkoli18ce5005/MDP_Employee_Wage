@@ -5,6 +5,7 @@ const days_in_month = 20
 
 let wage_array = [];
 let full_time_days = [];
+let part_time_days = [];
 
 //uc1
 console.log("----------uc1---------");
@@ -275,6 +276,21 @@ class Employee{
         }
         console.log("Every Element of Full Time Wage is truly holding Full time wage = " +isValid)
     }
+
+    //Check if there is any Part Time Wage
+    checkPartTimeWage(){
+        wage_array.find((element,index) => {
+            if(element == 80){
+                part_time_days.push(index+1);
+            }
+        });
+        if(part_time_days.length != 0){
+            console.log("Total occurance of Part Time Wage = " +part_time_days.length);
+            console.log("Part Time Wage present on days = " +part_time_days);
+        }else{
+            console.log("No Part Time Wage");
+        }
+    }
 }
 
 var emp = new Employee();
@@ -309,3 +325,7 @@ emp.displayFirstFullTimePay();
 //Check if Every Element of Full Time Wage is truly holding Full time wage
 console.log("----------------------");
 emp.checkFullTimeWage();
+
+//Check if there is any Part Time Wage
+console.log("----------------------");
+emp.checkPartTimeWage();

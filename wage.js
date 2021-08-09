@@ -234,6 +234,12 @@ class Employee{
         wage_array.forEach(element => total_wage += element);
         return total_wage;
     }
+
+    displayDailyWage(){
+        console.log("Day \t|\t Wage");
+        console.log("----------------------");
+        wage_array.map((element,index) => console.log(index+1 +" \t|\t " +element));
+    }
 }
 
 var emp = new Employee();
@@ -252,3 +258,7 @@ console.log("Total wage calculated using array = " +emp.totalWageCalculater());
 //Calculate total Wage using Array forEach
 console.log("----------------------");
 console.log("Total wage calculated using for each = " +emp.totalWageUsingForEach());
+
+//Show the Day along with Daily Wage using Array map helper function
+console.log("----------------------");
+emp.displayDailyWage();

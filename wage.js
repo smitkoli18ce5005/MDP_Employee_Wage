@@ -6,6 +6,7 @@ const days_in_month = 20
 let wage_array = [];
 let full_time_days = [];
 let part_time_days = [];
+let emp_Wage_Map = {};
 
 //uc1
 console.log("----------uc1---------");
@@ -306,6 +307,17 @@ class Employee{
         }
         console.log("Total number of days worked = " +days_worked);
     }
+
+    //Store the Day and the Daily Wage along with the Total wage using map
+    storeDayWageTotal(){
+        let total_wage = 0;
+        for(let i=1;i<=days_in_month;i++){
+            let current_wage = this.dailyWage(this.checkAttendance());
+            total_wage += current_wage;
+            emp_Wage_Map["Day: " +i] = [current_wage, total_wage];
+        }
+        console.log(emp_Wage_Map);
+    }
 }
 
 var emp = new Employee();
@@ -348,3 +360,7 @@ emp.checkPartTimeWage();
 //Find the number of days the Employee Worked
 console.log("----------------------");
 emp.totalDays();
+
+//Store the Day and the Daily Wage along with the Total wage using map
+console.log("----------------------");
+emp.storeDayWageTotal();

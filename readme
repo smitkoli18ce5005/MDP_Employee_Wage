@@ -7,10 +7,15 @@ uc5     -   Calculate monthly wage
 uc6     -   Calculate monthly wage for restricted hours
 uc7     -   Create employee class
 uc8     -   Calculate total wage using array
-task_1  -   Calculate total Wage using Array forEach
-task_2  -   Show the Day along with Daily Wage using Array map helper function
-task_3  -   Show Days when Full time wage of 160 were earned using filter function
-task_4  -   Find the first occurrence when Full Time Wage was earned using find function
-task_5  -   Check if Every Element of Full Time Wage is truly holding Full time wage
-task_6  -   Check if there is any Part Time Wage
-task_7  -   Find the number of days the Employee Worked
+uc 9    -   {
+                task_1  -   Calculate total Wage using Array forEach
+                task_2  -   Show the Day along with Daily Wage using Array map helper function
+                task_3  -   Show Days when Full time wage of 160 were earned using filter function
+                task_4  -   Find the first occurrence when Full Time Wage was earned using find function
+                task_5  -   Check if Every Element of Full Time Wage is truly holding Full time wage
+                task_6  -   Check if there is any Part Time Wage
+                task_7  -   Find the number of days the Employee Worked
+            }
+uc10    -   {
+                task_1  -   Store the Day and the Daily Wage along with the Total wage using map
+            }               

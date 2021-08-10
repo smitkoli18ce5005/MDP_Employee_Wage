@@ -3,6 +3,8 @@ const part_time_wage = 4
 const wage_per_hr = 20
 const days_in_month = 20
 
+let emp_name = "";
+let emp_id = "";
 let wage_array = [];
 let full_time_days = [];
 let part_time_days = [];
@@ -136,8 +138,10 @@ console.log("----------uc6---------");
 //uc7
 console.log("----------uc7---------");
 class Employee{
-    constructor(){
+    constructor(name,id){
         console.log("Welcome to employee wage computation");
+        emp_name = name;
+        emp_id = id;
     }
     checkAttendance(){
         let key = Math.floor(Math.random()*10%3);
@@ -336,6 +340,18 @@ class Employee{
     }
 }
 
+class EmployeePayroll extends Employee{
+    constructor(emp_name,emp_id){
+        super(emp_name,emp_id);
+    }
+    displayPayrollData(){
+        console.log("------Employee Payroll Data------");
+        console.log("Name\t\t:\t" +emp_name);
+        console.log("Employee-ID\t:\t" +emp_id);
+        console.log("Salary\t\t:\t" +this.monthlyWage());
+    }
+}
+
 var emp = new Employee();
 console.log("Monthly wage = " +emp.monthlyWage());
 console.log("-----------------------------------");
@@ -384,3 +400,8 @@ emp.storeInMap();
 //Store the Day, Hours Worked on single day and wage earned in object
 console.log("----------------------");
 emp.storeInObject();
+
+//Ability to create Employee Payroll Data with id, name and salary
+console.log("----------------------");
+let empPayObj = new EmployeePayroll("Smit Koli", "MS-1230");
+empPayObj.displayPayrollData();

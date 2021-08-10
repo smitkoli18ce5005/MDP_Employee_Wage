@@ -17,3 +17,4 @@ uc 9    -   {
                 task_7  -   Find the number of days the Employee Worked
             }
 uc10    -   Store the Day and the Daily Wage along with the Total wage using map             
+uc11    -   Store the Day, Hours Worked on single day and wage earned in object

@@ -7,6 +7,8 @@ let wage_array = [];
 let full_time_days = [];
 let part_time_days = [];
 let emp_Wage_Map = {};
+let emp_Wage_object = {};
+let emp_Wage_object_Array = [];
 
 //uc1
 console.log("----------uc1---------");
@@ -318,6 +320,20 @@ class Employee{
         }
         console.log(emp_Wage_Map);
     }
+
+    //Store the Day, Hours Worked on single day and wage earned in object
+    storeInObject(){
+        for(let i=1;i<=days_in_month;i++){
+            let current_wage = this.dailyWage(this.checkAttendance());
+            emp_Wage_object = {
+                Day: i,
+                Hours_Worked: current_wage/wage_per_hr,
+                Wage_Earned: current_wage
+            }
+            emp_Wage_object_Array.push(emp_Wage_object);
+        }
+        console.log(emp_Wage_object_Array);
+    }
 }
 
 var emp = new Employee();
@@ -364,3 +380,7 @@ emp.totalDays();
 //Store the Day and the Daily Wage along with the Total wage using map
 console.log("----------------------");
 emp.storeInMap();
+
+//Store the Day, Hours Worked on single day and wage earned in object
+console.log("----------------------");
+emp.storeInObject();

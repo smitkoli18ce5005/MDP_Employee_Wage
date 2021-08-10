@@ -16,6 +16,4 @@ uc 9    -   {
                 task_6  -   Check if there is any Part Time Wage
                 task_7  -   Find the number of days the Employee Worked
             }
-uc10    -   {
-                task_1  -   Store the Day and the Daily Wage along with the Total wage using map
-            }               
+uc10    -   Store the Day and the Daily Wage along with the Total wage using map             

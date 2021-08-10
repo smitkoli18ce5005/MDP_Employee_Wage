@@ -309,7 +309,7 @@ class Employee{
     }
 
     //Store the Day and the Daily Wage along with the Total wage using map
-    storeDayWageTotal(){
+    storeInMap(){
         let total_wage = 0;
         for(let i=1;i<=days_in_month;i++){
             let current_wage = this.dailyWage(this.checkAttendance());
@@ -363,4 +363,4 @@ emp.totalDays();
 
 //Store the Day and the Daily Wage along with the Total wage using map
 console.log("----------------------");
-emp.storeDayWageTotal();
+emp.storeInMap();

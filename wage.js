@@ -5,6 +5,8 @@ const days_in_month = 20
 
 let emp_name = "";
 let emp_id = "";
+let emp_gender = "";
+let emp_date = "";
 let wage_array = [];
 let full_time_days = [];
 let part_time_days = [];
@@ -341,14 +343,27 @@ class Employee{
 }
 
 class EmployeePayroll extends Employee{
-    constructor(emp_name,emp_id){
+    
+    constructor(emp_name,emp_id,gender,date){
         super(emp_name,emp_id);
+        emp_gender = gender;
+        emp_date = date;
     }
     displayPayrollData(){
         console.log("------Employee Payroll Data------");
         console.log("Name\t\t:\t" +emp_name);
         console.log("Employee-ID\t:\t" +emp_id);
         console.log("Salary\t\t:\t" +this.monthlyWage());
+    }
+
+    //Ability to extend Employee Payroll Data to store gender and start date
+    displayPayrollData_extended(){
+        console.log("------Employee Payroll Data------");
+        console.log("Name\t\t\t:\t" +emp_name);
+        console.log("Employee-ID\t\t:\t" +emp_id);
+        console.log("Salary\t\t\t:\t" +this.monthlyWage());
+        console.log("Employee Gender\t\t:\t" +emp_gender);
+        console.log("Employee Start Date\t:\t" +emp_date);
     }
 }
 
@@ -405,3 +420,8 @@ emp.storeInObject();
 console.log("----------------------");
 let empPayObj = new EmployeePayroll("Smit Koli", "MS-1230");
 empPayObj.displayPayrollData();
+
+//Ability to extend Employee Payroll Data to store gender and start date
+console.log("----------------------");
+let empPayObjExt = new EmployeePayroll("Smit Koli", "MS-1230","Male","02/08/2021");
+empPayObjExt.displayPayrollData_extended();

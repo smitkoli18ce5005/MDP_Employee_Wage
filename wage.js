@@ -365,6 +365,41 @@ class EmployeePayroll extends Employee{
         console.log("Employee Gender\t\t:\t" +emp_gender);
         console.log("Employee Start Date\t:\t" +emp_date);
     }
+
+    //Validate email, number and name starting with capital letter
+    validateEmail(email){
+        let regex = /([a-zA-Z0-9_.]+)(@)([a-z]+)(\.)([a-z]{2,3})(\.)?([a-z]{2,3})?/
+        if(regex.test(email)){
+            return "Email is Valid";
+        }else{
+            throw("Email is invalid!");
+        }
+    }
+    validateNumber(number){
+        let regex = /^([\d]{2})(\-)([789])([\d]{9})$/
+        if(regex.test(number)){
+            return "Number is Valid";
+        }else{
+            throw("Number is invalid!");
+        }
+    }
+    validateName(name){
+        let regex = /^([A-Z])([a-z]+)( )([A-Z])([a-z]+)( )?([A-Z])?([a-z]+)?/
+        if(regex.test(name)){
+            return "Name is Valid";
+        }else{
+            throw("Name is invalid!");
+        }
+    }
+    validateGender(gender){
+        let male_regex = /^([mM])(ale)/
+        let female_regex = /^([fF])(emale)/
+        if(male_regex.test(gender) || female_regex.test(gender)){
+            return "Gender is Valid";
+        }else{
+            throw("Gender is invalid!");
+        }
+    }
 }
 
 var emp = new Employee();
@@ -425,3 +460,39 @@ empPayObj.displayPayrollData();
 console.log("----------------------");
 let empPayObjExt = new EmployeePayroll("Smit Koli", "MS-1230","Male","02/08/2021");
 empPayObjExt.displayPayrollData_extended();
+
+//Validate email, number and name starting with capital letter
+console.log("----------------------");
+{   //email validation
+    try{
+        console.log(empPayObj.validateEmail("sss.sdsd@gmail.com.in"));
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+{   //Number validation
+    try{
+        console.log(empPayObj.validateNumber("91-9935668252"));
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+{   //Name validation
+    try{
+        console.log(empPayObj.validateName("Smit Koli"));
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+{   //Gender validation
+    try{
+        console.log(empPayObj.validateGender("Female"));
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+
